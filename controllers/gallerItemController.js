@@ -42,3 +42,22 @@ export function getGalleryItems(req,res){
   )
 }
 
+
+export function galleryItem(req, res) {
+  const user = req.body.user;
+
+  
+  if (!user) {
+    return res.status(403).json({
+      message: "Please login to create a gallery item",
+    });
+  }
+
+  if (user.type !== "admin") {
+    return res.status(403).json({
+      message: "Only admins can create gallery items",
+    });
+  }
+}
+
+
