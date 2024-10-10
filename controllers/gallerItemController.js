@@ -42,7 +42,6 @@ export function getGalleryItems(req,res){
   )
 }
 
-
 export function galleryItem(req, res) {
   const user = req.body.user;
 
